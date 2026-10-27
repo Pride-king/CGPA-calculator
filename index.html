@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="caculator">
+      <div class="heading">
+        <h1>CGPA Calculator</h1>
+        <h2>Nigerian 5.0 grading scale</h2>
+      </div>
+      <div class="border-line"></div>
+      <div class="sub-heading">
+        <caption>
+          This Semester
+        </caption>
+        <table>
+          <tr>
+            <th>COURSE CODE</th>
+            <th>UNITS</th>
+            <th>SCORE (0-100)</th>
+            <th>GRADE</th>
+          </tr>
+           <!-- <div class="border-line"></div> -->
+          <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td class="disaper">
+                <input type="text">
+            </td>
+          </tr>
+          <tr>
+             <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td class="disaper">
+                <input type="text">
+            </td>
+          </tr>
+          <tr>
+             <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td class="disaper">
+                <input type="text">
+            </td>
+          </tr>
+          <tr>
+                 <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td class="disaper">
+                <input type="text">
+            </td>
+          </tr>
+          <tr>
+             <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td>
+                <input type="text">
+            </td>
+             <td class="disaper">
+                <input type="text">
+            </td>
+          </tr>
+        </table>
+        <div class="border-line"></div>
+        <div class="records">
+            <h1>Previous record <span> (optional) </span> </h1>
+            <table>
+                <tr>
+                    <th>Previous CGPA</th>
+                    <th> Previous total unit</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+            </table>
+            <p>Leave empty if this is your first semester</p>
+            <button class="btn-1">CALCULATE</button>
+            <button class="btn-2">RESET</button>
+            <div class="warning">
+                <p><i class="fa-solid fa-circle-exclamation"></i> Row 3: score must be between 0 and 100</p>
+            </div>
+            <div class="values-area">
+                <div class="first-card">
+                    <h2>GPA</h2>
+                    <span id="">--</span>
+                    <p>This semester unit - <span id=""></span></p>
+                </div>
+                <div class="second-card">
+                     <h2>CGPA</h2>
+                    <span id="">--</span>
+                    <p>This semester unit - <span id=""></span></p>
+                </div>
+                <div class="third-card">
+                     <h2>Class of Degree</h2>
+                    <span id="">--</span>
+                    <p>CGPA 3.50 – 4.49</p>
+                </div>
+            </div>
+            <div class="border-line"></div>
+            <div class="grading">
+                <details open>
+                    <summary>
+                        <h2>Grading scale</h2>
+                    </summary>
+                    <table>
+                        <tr>
+                            <th>
+                                GRADE
+                            </th>
+                            <th>
+                                SCORE
+                            </th>
+                            <th>
+                                POINT
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                A
+                            </td>
+                            <td>
+                                70-100
+                            </td>
+                            <td>
+                                5
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                B
+                            </td>
+                            <td>
+                                60-69
+                            </td>
+                            <td>
+                                4
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                C
+                            </td>
+                            <td>
+                                50-59
+                            </td>
+                            <td>
+                                3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                D
+                            </td>
+                            <td>
+                                40-49
+                            </td>
+                            <td>
+                                2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                E
+                            </td>
+                            <td>
+                                40-44
+                            </td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                F
+                            </td>
+                            <td>
+                                0-39
+                            </td>
+                            <td>
+                                0
+                            </td>
+                        </tr>
+                    </table>
+                </details>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
