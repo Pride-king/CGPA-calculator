@@ -47,6 +47,9 @@ input{
 }
 .records input{
     width: 350px;
+    height: 40px;
+    background-color: #F0F0F0;
+    border: 1px solid;
     margin: 3px;
 }
 .records p{
@@ -73,7 +76,6 @@ input{
 }
 .btn-2{
     border: 1px solid ;
-    
 }
 .values-area{
     display: flex;
@@ -117,9 +119,3 @@ summary {
   cursor: pointer;
 }
 
-@media (max-width : 360px) {
-    /* .sub-heading table, input{
-        display: flex;
-        flex-direction: column; */
-    }
-}
