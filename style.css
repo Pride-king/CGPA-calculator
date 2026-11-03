@@ -77,6 +77,20 @@ input{
 .btn-2{
     border: 1px solid ;
 }
+.warning{
+    border: 2px solid #ae1800;
+    padding: 19px;
+    background-color: #FFF2EF;
+
+}
+.warning p{
+    font-size: 14px;
+    font-weight: bold;
+    color: #7c1405;
+}
+.warning i{
+    color:#7c1405 ;
+}
 .values-area{
     display: flex;
     justify-content: center;
