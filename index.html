@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CGPA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-     <link
+   <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
-    <main>
+    <main class="calculator">
         <header class="heading">
             <h1>CGPA Calculator</h1>
             <p>Nigerian 5.0 grading scale</p>
@@ -27,9 +30,9 @@
             <span>Grade</span>
           </div>
 
-          <div class="courses-rows">
+          <div class="course-row">
                 <label
-               class="mobile-label coursecode-label" 
+               class="mobile-label course-code-label" 
                for="course-code-1">
                Course 1 · code
             </label>
@@ -68,7 +71,8 @@
             <span class="mobile-grade-label">Grade</span>
             <output class="grade-output">—</output>
         </div>
-          </div>
+
+     </div>
 
          <div class="course-row">
             <label 
@@ -269,7 +273,7 @@
         <button class="btn-secondary" type="reset">RESET</button>
       </div>
 
-      <div class="warning" role="alert" hidde>
+      <div class="warning" role="alert">
         <i class="fa-regular fa-circle-exclamation"></i>
         <p class="warning-output"> --</p>
       </div>

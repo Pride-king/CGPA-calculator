@@ -1,0 +1,530 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 64px 16px;
+  background: #EAE9E9;
+  color: #201E1D;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.calculator{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 2px solid #A6A5A4;
+  background: #F3F2F2;
+}
+
+.heading {
+  padding-bottom: 24px;
+  border-bottom: 2px solid #A6A5A4;
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.heading p {
+  margin-top: 4px;
+  color:#605D5D;
+  font-size: 15px;
+}
+
+
+.semester-section h2,
+.records h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.course-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-header,
+.course-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr) minmax(0, 1fr) 96px;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.course-header {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #A6A5A4 ;
+  color: #605D5D;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.course-row input,
+.field-group input {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid  ;
+  border-radius: 0;
+  outline: none;
+  background: #EAE9E9;
+  color: #201E1D;
+  font: 400 14px  "Archivo", system-ui, sans-serif;
+  caret-color: #EC3013;
+}
+
+.course-row input:hover,
+.field-group input:hover {
+  border-color: rgba(32, 30, 29, 0.45);
+}
+
+.course-row input:focus,
+.field-group input:focus {
+  border-color: #EC3013;
+  outline: 2px solid #EC3013;
+  outline-offset: 0;
+}
+
+.grade-output {
+  display: block;
+  color: #201E1D;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+
+.mobile-label,
+.mobile-grade-label {
+  display: none;
+}
+
+.records {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 2px solid #A6A5A4;
+}
+
+
+.records h2 {
+  margin-bottom: 0;
+}
+
+.records h2 span {
+  color: #605D5D;
+  font-weight: 400;
+}
+
+.previous-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-group label {
+  color: #605D5D;
+  font-size: 12px;
+}
+
+.field-group input {
+  min-height: 40px;
+}
+
+.helper-text {
+  color: #605D5D;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+
+.actions button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font: 800 15px "Archivo", system-ui, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.actions button:focus-visible {
+  outline: 2px solid #EC3013;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  min-width: 160px;
+  background: #EC3013;
+  color:#F3F2F2;
+}
+
+.btn-primary:hover {
+  background: #DD2B0F;
+}
+
+.btn-primary:active {
+  background: #AE1800;
+}
+
+.btn-secondary {
+  min-width: 120px;
+  border-color: #A6A5A4 !important;
+  background: transparent;
+  color: #201E1D;
+}
+
+.btn-secondary:hover {
+  background: rgba(32, 30, 29, 0.07);
+}
+
+.btn-secondary:active {
+  background: rgba(32, 30, 29, 0.14);
+}
+
+.actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.warning {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 2px solid #AE1800;
+  background: #FFF2EF;
+  color: #7C1405;
+}
+
+/* .warning[hidden] {
+  display: none;
+} */
+
+.warning i {
+  flex: 0 0 auto;
+  font-size: 18px;
+}
+
+.warning p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.values-area {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 2px solid #A6A5A4;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 24px;
+}
+
+.result-card + .result-card {
+  border-left: 2px solid #A6A5A4;
+}
+
+.result-card h2 {
+  color: #605D5D;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-card p {
+  color: #605D5D;
+  font-size: 13px;
+}
+
+.degree-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 8px 12px;
+  background: #EC3013;
+  color: #F3F2F2;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.grading {
+  padding-top: 16px;
+  border-top: 2px solid #A6A5A4;
+}
+
+.grading details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.grading details summary::-webkit-details-marker {
+  display: none;
+}
+
+.grading details summary::marker {
+  content: "";
+}
+
+.grading details summary i {
+  font-size: 16px;
+}
+
+.grading details[open] summary i {
+  transform: rotate(180deg);
+}
+
+.grading-table {
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.grading-table th {
+  padding: 8px;
+  border-bottom: 2px solid #A6A5A4;
+  color:  #605D5D;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grading-table td {
+  padding: 8px;
+  border-bottom: 1px solid #A6A5A4;
+}
+
+.grading-table td:first-child {
+  font-weight: 600;
+}
+
+.grading-table tbody tr:hover {
+  background: rgba(32, 30, 29, 0.04);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .calculator {
+    gap: 24px;
+    padding: 16px;
+  }
+
+  .heading {
+    padding-bottom: 16px;
+  }
+
+  .heading h1 {
+    font-size: 25px;
+  }
+
+  .heading p {
+    font-size: 14px;
+  }
+
+  .semester-section h2,
+  .records h2 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  .course-header {
+    display: none;
+  }
+
+  .course-table {
+    gap: 0;
+  }
+
+  .course-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px 12px;
+    padding: 12px 0;
+    border-top: 2px solid #A6A5A4;
+  }
+
+  .mobile-label {
+    display: block;
+    margin-bottom: -5px;
+    color: #605D5D;
+    font-size: 12px;
+  }
+
+  .course-code-label {
+    grid-column: 1 / -1;
+  }
+
+  .course-code {
+    grid-column: 1 / -1;
+  }
+
+  .course-row input {
+    min-height: 44px;
+  }
+
+  .grade-cell {
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4px;
+  }
+
+  .mobile-grade-label {
+    display: inline;
+    color:#605D5D;
+    font-size: 14px;
+  }
+
+  .records {
+    padding-top: 16px;
+  }
+
+  .previous-fields {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .field-group input {
+    min-height: 44px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .actions button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .warning {
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .warning i {
+    margin-top: 1px;
+  }
+
+  .values-area {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .result-card + .result-card {
+    border-top: 2px solid #A6A5A4;
+    border-left: 0;
+  }
+
+  .result-card h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .stat-value {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 32px;
+  }
+
+  .result-card p {
+    display: none;
+  }
+
+  .degree-card {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .degree-card h2 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .degree-card .degree-badge {
+    align-self: flex-start;
+  }
+
+  .grading {
+    padding-top: 8px;
+  }
+
+  .grading details:not([open]) .grading-table {
+    display: none;
+  }
+
+  .grading details[open] .grading-table {
+    display: table;
+  }
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    padding: 12px;
+  }
+}
