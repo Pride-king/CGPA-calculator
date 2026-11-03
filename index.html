@@ -247,6 +247,72 @@
           </div>
         </div>
         </section>
+
+        
+      <section class="records">
+        <h2 id="records-title">Previous record <span>(optional)</span></h2>
+        <div class="previous-fields">
+          <div class="field-group">
+            <label for="previous-cgpa">Previous CGPA</label>
+            <input id="previous-cgpa" type="number" min="0" max="5" step="0.01" />
+          </div>
+          <div class="field-group">
+            <label for="previous-units">Previous total units</label>
+            <input id="previous-units" type="number" min="0" max="6" />
+          </div>
+        </div>
+        <p class="helper-text">Leave empty if this is your first semester</p>
+      </section>
+
+          <div class="actions">
+        <button class="btn-primary" type="button">CALCULATE</button>
+        <button class="btn-secondary" type="reset">RESET</button>
+      </div>
+
+      <div class="warning" role="alert" hidde>
+        <i class="fa-regular fa-circle-exclamation"></i>
+        <p class="warning-output"> --</p>
+      </div>
+
+      <section class="values-area" >
+        <div class="result-card">
+          <h2>GPA</h2>
+          <output class="stat-value">--</output>
+          <p>This semester · <span>--</span> units</p>
+        </div>
+        <div class="result-card">
+          <h2>CGPA</h2>
+          <output class="stat-value">--</output>
+          <p>All semesters · <span>--</span> units</p>
+        </div>
+        <div class="result-card degree-card">
+          <h2>Class of degree</h2>
+          <output class="degree-badge">--</output>
+          <p>CGPA 3.50 – 4.49</p>
+        </div>
+      </section>
+
+       <section class="grading">
+        <details>
+          <summary>
+            <span id="grading-title">Grading scale</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <table class="grading-table">
+            <thead>
+              <tr><th>Grade</th><th>Score</th><th>Point</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>70–100</td><td>5</td></tr>
+              <tr><td>B</td><td>60–69</td><td>4</td></tr>
+              <tr><td>C</td><td>50–59</td><td>3</td></tr>
+              <tr><td>D</td><td>45–49</td><td>2</td></tr>
+              <tr><td>E</td><td>40–44</td><td>1</td></tr>
+              <tr><td>F</td><td>0–39</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </details>
+      </section>
     </main>
 
 
