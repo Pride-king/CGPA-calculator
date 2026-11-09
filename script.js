@@ -36,6 +36,18 @@ function getGradeLetter(score){
     }
 }
 
+function calculateGPA(totalUnit , totalQualityPoint){
+   
+    if (totalUnit === 0){
+        return null;
+    }else {
+        const GPA = totalQualityPoint / totalUnit;
+        return GPA;
+    }
+}
+
+
+
 function calculateGrade(){
     let hasError = false;
 
