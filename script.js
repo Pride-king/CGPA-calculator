@@ -1,5 +1,7 @@
 const inputElements = document.querySelectorAll('.course-score');
 const outputElements = document.querySelectorAll('.grade-output');
+const warningIndicator = document.querySelector('.warning');
+const warningOutput = document.querySelector('.warning-output');
 
 
 function getGradePoint(score){
@@ -35,16 +37,25 @@ function getGradeLetter(score){
 }
 
 function calculateGrade(){
+    let hasError = false;
+
  for (let i = 0; i < inputElements.length; i++){
     if (inputElements[i].value === ""){
         outputElements[i].innerText = "_";
-    }else {
-    const score =  Number(inputElements[i].value);
-    const gradePoint = getGradePoint(score);
-    const gradeLetter = getGradeLetter(score);
+    } else {
+         const score = Number(inputElements[i].value);
 
-    outputElements[i].innerText = `${gradeLetter} · ${gradePoint}`;
+        if (score < 0 || score > 100){
+            warningOutput.innerText = `Row ${i + 1}: Score must be between 0 and 100`;
+            hasError = true;
+        }else{
+            const gradePoint = getGradePoint(score);
+            const gradeLetter = getGradeLetter(score);
+
+            outputElements[i].innerText = `${gradeLetter} · ${gradePoint}`;
+        }
     }
  }
 
+    warningIndicator.hidden = !hasError;
 }

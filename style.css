@@ -229,9 +229,9 @@ body {
   color: #7C1405;
 }
 
-/* .warning[hidden] {
+.warning[hidden] {
   display: none;
-} */
+}
 
 .warning i {
   flex: 0 0 auto;
