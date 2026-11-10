@@ -5,8 +5,7 @@ const warningIndicator = document.querySelector(".warning");
 const warningOutput = document.querySelector(".warning-output");
 const previousCGPAInput = document.querySelector("#previous-cgpa");
 const previousUnitInput = document.querySelector("#previous-units");
-let previousCGPA = previousCGPAInput.value;
-let previousUnit = previousUnitInput.value;
+
 
 function getGradePoint(score) {
   //
@@ -61,16 +60,18 @@ function calculateCGPA(
 ) {
   if (previousCGPA === "" && previousUnit === "") {
     // Calculate CGPA using only current quality points and current units
-    const CGPA = calculateGPA(currentQualityPoints, currentUnits);
+    const CGPA = calculateGPA(currentUnits, currentQualityPoints);
     return CGPA;
   } else if (previousCGPA !== "" && previousUnit !== "") {
-    let NumericPreviousCGPA = Number(previousCGPA.value);
-    let NumericPreviousUnit = Number(previousUnit.value);
+    let NumericPreviousCGPA = Number(previousCGPA);
+    let NumericPreviousUnit = Number(previousUnit);
     const totalUnits = NumericPreviousUnit + currentUnits;
     const totalQualityPoints =
       NumericPreviousCGPA * NumericPreviousUnit + currentQualityPoints;
-    const CGPA = calculateGPA(totalQualityPoints, totalUnits);
+    const CGPA = calculateGPA(totalUnits, totalQualityPoints);
     return CGPA;
+  }else {
+    return null;
   }
 }
 
@@ -110,5 +111,26 @@ function calculateGrade() {
     }
   }
 
+    if(previousCGPAInput.value === "" && previousUnitInput.value !== "" || previousUnitInput.value === "" && previousCGPAInput.value !== ""){
+        hasError = true;
+      warningOutput.innerText = "Please fill in both Previous CGPA and Previous Units";
+     }
+
+ let semesterGPA = null ;
+ let cumulativeCGPA = null ;
+ let displayGPA = document.querySelectorAll('.stat-value')[0];
+ let displayCGPA = document.querySelectorAll('.stat-value')[1];
+
+ if(hasError === false){
+   semesterGPA = calculateGPA(totalUnits, totalQualityPoints);
+  cumulativeCGPA = calculateCGPA( previousCGPAInput.value,
+previousUnitInput.value,
+  totalQualityPoints,
+  totalUnits);
+ }
+ 
+
   warningIndicator.hidden = !hasError;
+displayGPA.innerText = semesterGPA !== null ? semesterGPA.toFixed(2) : "N/A";
+displayCGPA.innerText = cumulativeCGPA !== null ? cumulativeCGPA.toFixed(2) : "N/A";
 }
